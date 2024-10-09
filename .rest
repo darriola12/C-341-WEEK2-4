@@ -1,0 +1,43 @@
+### GET ALL RECIPES
+
+GET http://localhost:3001/recipes/ Accept: application/json
+
+###
+
+### GET RECIPE BY ID
+
+GET http://localhost:3001/recipes/{id} Accept: application/json
+
+###
+
+### CREATE A NEW RECIPE
+
+POST http://localhost:3001/recipes/ Content-Type: application/json
+
+{
+"title": "Título de la receta",
+"ingredients": ["Ingrediente 1", "Ingrediente 2"],
+"preparation": "Instrucciones de preparación",
+"time": "Tiempo de cocción",
+"country": "País de origen"
+}
+
+###
+
+### UPDATE RECIPE BY ID
+
+PUT http://localhost:3001/recipes/{id} Content-Type: application/json
+
+{
+"title": "Nuevo título de la receta",
+"ingredients": ["Nuevo ingrediente 1", "Nuevo ingrediente 2"],
+"preparation": "Nuevas instrucciones de preparación",
+"time": "Nuevo tiempo de cocción",
+"country": "Nuevo país de origen"
+}
+
+###
+
+### DELETE RECIPE BY ID
+
+DELETE http://localhost:3001/recipes/{id}
