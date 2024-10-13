@@ -8,6 +8,10 @@ const session = require("express-session");
 const GitHubStrategy = require("passport-github2").Strategy; 
 const cors = require("cors");
 
+const CALLBACK_URL = process.env.NODE_ENV === 'production'
+  ? 'https://tudominioenrender.com/github/callback'
+  : 'http://localhost:3001/github/callback';
+
 // Middleware para analizar el cuerpo de las peticiones
 app.use(bodyParser.json())
    .use(session({
@@ -37,7 +41,7 @@ app.use(bodyParser.json())
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL:process.env.CALL_BACK_URL
+    callbackURL: CALLBACK_URL
   },
 function(accessToken, refreshToken, profile, done) {
     return done(null, profile);
