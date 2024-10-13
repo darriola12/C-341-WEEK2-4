@@ -9,7 +9,7 @@ const GitHubStrategy = require("passport-github2").Strategy;
 const cors = require("cors");
 
 const CALLBACK_URL = process.env.NODE_ENV === 'production'
-  ? 'https://tudominioenrender.com/github/callback'
+  ? 'https://c-341-week2-4.onrender.com/github/callback'
   : 'http://localhost:3001/github/callback';
 
 // Middleware para analizar el cuerpo de las peticiones
