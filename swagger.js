@@ -6,7 +6,7 @@ const doc = {
     description: 'Recipe API',
     version: '1.0.0'
   },
-  host: 'localhost:3001',
+  host: 'https://c-341-week2-4.onrender.com',
   schemes: ['http', 'https']
 };
 
